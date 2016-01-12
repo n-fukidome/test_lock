@@ -1,0 +1,21 @@
+<%= form_for(@breeder) do |f| %>
+  <% if @breeder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@breeder.errors.count, "error") %> prohibited this breeder from being saved:</h2>
+
+      <ul>
+      <% @breeder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :species_id %><br>
+    <%= f.number_field :species_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

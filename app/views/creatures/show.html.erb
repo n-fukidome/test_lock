@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @creature.animal_id %>
+</p>
+
+<p>
+  <strong>Activation until:</strong>
+  <%= @creature.activation_until %>
+</p>
+
+<%= link_to 'Edit', edit_creature_path(@creature) %> |
+<%= link_to 'Back', creatures_path %>

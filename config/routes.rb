@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :menus
+
+  resources :meals
+
+  resources :breeders
+
+  resources :species
+
+  resources :creatures
+
   resources :animals
 
   # The priority is based upon order of creation: first created -> highest priority.

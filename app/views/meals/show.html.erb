@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Breeder:</strong>
+  <%= @meal.breeder_id %>
+</p>
+
+<p>
+  <strong>Recipted on:</strong>
+  <%= @meal.recipted_on %>
+</p>
+
+<%= link_to 'Edit', edit_meal_path(@meal) %> |
+<%= link_to 'Back', meals_path %>
