@@ -2,9 +2,10 @@ module Schedule
   class MealWork
     def self.feed
       _trigger_all do |species|
+        puts 'create meal and menu'
         @meal = Meal.create!
-        @meal.mune = Menu.create! meal_id: @meal.id, content: 'Banana'
-        _serve_meal enterprise
+        @meal.menu = Menu.create! meal_id: @meal.id, content: 'Banana'
+        _serve_meal species
       end
     end
 
@@ -14,10 +15,11 @@ module Schedule
         begin
           puts 'start each species'
           @breeder = species.breeders.last
-          next unless @breeder # next になることはないんはず
+          puts "#{@breeder}"
+          next unless @breeder # next になることはないはず
 
           activation_until = species.animals.first.creature.activation_until
-          next unless _is_alive? activation_until
+          # next unless _is_alive? activation_until
           yield species
         rescue => e
           puts '==================error!=================='
